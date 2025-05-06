@@ -10,8 +10,14 @@ const PORT = process.env.PORT || 5000;
 
 // Middleware
 app.use(cors({
-  origin: ["http://localhost:5173", "https://your-frontend.netlify.app"],
+  origin: [
+    "http://localhost:5173",  // For local development
+    "https://681a80b77489e98c177873da--steady-brigadeiros-76ed76.netlify.app"  // Your deployed Netlify app
+  ],
+  methods: ["GET", "POST"],  // Ensure the right HTTP methods are allowed
+  allowedHeaders: ["Content-Type"],  // Specify allowed headers (e.g., Content-Type for JSON)
 }));
+
 app.use(express.json());
 
 
