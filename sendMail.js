@@ -37,7 +37,7 @@ app.post('/api/contact', async (req, res) => {
     await transporter.sendMail(mailOptions);
     res.status(200).json({ success: true, message: 'Meddelande skickat!' });
   } catch (err) {
-    console.error(err);
+    console.error("Error in sending email:", err);  // This will show the error in your logs
     res.status(500).json({ success: false, message: 'Något gick fel.' });
   }
 });
