@@ -36,7 +36,7 @@ app.post('/api/contact', async (req, res) => {
     const mailOptions = {
       from: email,
       to: process.env.EMAIL_TO,
-      subject: `Meddelande från backend`,
+      subject: `Meddalde från kund ${name}`,
       text:` ${name}\n,${email},\n ${message},` ,
     };
 
